@@ -1,0 +1,67 @@
+﻿@model  IEnumerable<AttributesInMVC.Models.STUDENT>
+<!--Ienumerable due to list of students given in Index method-->
+@{ 
+    ViewBag.title = "student list";
+}
+<html>
+<body >
+    <h2 class="my">list of students</h2>
+    <table border="2px solid black" class="center-block">
+        <tr>
+            <!--never display id-->
+            <td>
+                @Html.DisplayNameFor(model => model.name);
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.age);
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.gender);
+            </td>
+
+        </tr>
+        @foreach (var i in Model)   //to display mode
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => i.name)  <!--displayfor=to display model-->
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => i.age)  <!--displayfor=to display model-->
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => i.gender)  <!--displayfor=to display model-->
+
+                </td>
+            <td>
+                @Html.ActionLink("Student Details", "Details", "Student", new { studentid = i.id }, null)
+            </td>
+                </tr>
+        }
+    </table>
+    <style>
+        body {
+            background-color: antiquewhite;
+           
+        }
+       .center-block{
+           margin-left:auto;
+           margin-right:auto;
+       }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+         .my{
+            text-align:center;
+            font-size:x-large;
+        }
+        
+    </style>
+</body>
+</html>

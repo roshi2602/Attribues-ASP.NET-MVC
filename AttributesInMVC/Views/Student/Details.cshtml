@@ -1,0 +1,54 @@
+﻿@model AttributesInMVC.Models.STUDENT
+
+@{
+    ViewBag.title = "student details";
+
+}
+
+
+<!--<dl>is for description list , it is used with <dt> and <dd> tag-->
+<!--dt tag is for description list followed by <dd> tag i.e. description item-->
+<table border="2px solid black" class="center-block">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.name);
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.name);
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.age);
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.age);
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.gender);
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.gender);
+        </td>
+
+    </tr>
+
+</table>
+@Html.ActionLink("back", "Index", "Student")    
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .center-block {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
